@@ -942,12 +942,25 @@ then
 		else
 			param set MAV_TYPE ${MAV_TYPE}
 		fi
+		
+		# if it is blimp, only activate pwm_pass app
+		#if [ $MAV_TYPE == 7 ]
+		#if [true]
+		#then 
+		#	sh /etc/init.d/rc.blimp_apps
+		#	echo "Started the blimp apps"
+		#
+		#else
 
-		# Load mixer and configure outputs
+			# Load mixer and configure outputs
 		sh /etc/init.d/rc.interface
+		
 
-		# Start standard vtol apps
+			# Start standard vtol apps
 		sh /etc/init.d/rc.vtol_apps
+
+		#fi
+
 	fi
 
 	#
